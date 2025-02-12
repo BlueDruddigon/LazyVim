@@ -2,6 +2,15 @@ return {
   -- copilot chat
   {
     "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      "folke/which-key.nvim",
+      opts = {
+        spec = {
+          { "<leader>gc", group = "copilot", icon = { icon = "", color = "cyan" } },
+          { "<leader>gcc", group = "chat", icon = { icon = "󱋊", color = "cyan" } },
+        },
+      },
+    },
     opts = function()
       local select = require("CopilotChat.select")
       return {
@@ -24,7 +33,6 @@ return {
       }
     end,
     keys = {
-      { "<leader>gc", "", desc = "+ai", mode = { "n", "v" } },
       { "<leader>gcd", mode = { "n", "v" }, "<CMD>CopilotChatDocs<CR>", desc = "(Copilot) Generate Docs" },
       { "<leader>gce", mode = { "n", "v" }, "<CMD>CopilotChatExplain<CR>", desc = "(Copilot) Explain Code" },
       { "<leader>gcf", mode = { "n", "v" }, "<CMD>CopilotChatFixDiagnostic<CR>", desc = "(Copilot) Fix Bug" },
@@ -33,7 +41,7 @@ return {
       { "<leader>gca", "<CMD>CopilotChatAgents<CR>", desc = "(Copilot) Select Agents" },
       { "<leader>gcm", "<CMD>CopilotChatModels<CR>", desc = "(Copilot) Select Models" },
       {
-        "<leader>gcs",
+        "<leader>gccs",
         mode = { "n", "v" },
         function()
           local name = vim.fn.input("Chat name to be saved: ")
@@ -41,10 +49,10 @@ return {
             require("CopilotChat").save(name)
           end
         end,
-        { desc = "(Copilot) Save Chat" },
+        desc = "(Copilot) Save Chat",
       },
       {
-        "<leader>gcl",
+        "<leader>gccl",
         mode = { "n", "v" },
         function()
           local name = vim.fn.input("Chat name to be loaded: ")
@@ -52,7 +60,7 @@ return {
             require("CopilotChat").load(name)
           end
         end,
-        { desc = "(Copilot) Load Chat" },
+        desc = "(Copilot) Load Chat",
       },
       {
         "<leader>gco",
