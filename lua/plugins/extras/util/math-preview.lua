@@ -14,7 +14,7 @@ return {
       "folke/which-key.nvim",
       opts = {
         spec = {
-          { "<leader>m", group = "Math Functionality" },
+          { "<leader>m", group = "math", icon = { icon = "󰒠", color = "cyan" } },
         },
       },
     },
