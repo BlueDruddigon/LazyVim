@@ -10,6 +10,19 @@ return {
     },
   },
 
+  -- keybindings memo
+  {
+    "folke/which-key.nvim",
+    opts = {
+      spec = {
+        {
+          mode = { "n", "v" },
+          { "<leader>g", group = "git/copilot" },
+        },
+      },
+    },
+  },
+
   -- better diagnostics list and others
   {
     "folke/trouble.nvim",
