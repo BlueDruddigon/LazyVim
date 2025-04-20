@@ -1,0 +1,23 @@
+{
+  "main": {
+    "prefix": "main",
+    "body": [
+      "\n\n\ndef ${1:name}():",
+      "\tpass\n\n",
+      "if __name__ == '__main__':",
+      "\t${1:name}()"
+    ],
+    "description": "main class"
+  },
+  "class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:name}(nn.Module):",
+      "\tdef __init__(self,) -> None:",
+      "\t\tsuper().__init__()\n",
+      "\tdef forward(self, x: torch.Tensor) -> torch.Tensor:",
+      "\t\treturn"
+    ],
+    "description": "create nn.Module class by typing `class`"
+  }
+}
