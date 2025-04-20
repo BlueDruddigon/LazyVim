@@ -52,6 +52,8 @@ require("lazy").setup({
     -- customized language plugins
     { import = "plugins.extras.lang.clangd" },
     { import = "plugins.extras.lang.python" },
+    -- leetcode plugin
+    { import = "plugins.extras.util.leetcode" },
   },
   ui = {
     border = "rounded",
