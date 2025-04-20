@@ -15,6 +15,14 @@ opt.showcmd = false -- don't show cmd
 opt.swapfile = false -- do not use swapfile
 opt.foldenable = false -- disable fold on startup
 
+opt.autoindent = true
+opt.smartindent = true
+opt.breakindent = true
+
+opt.shell = "fish"
+opt.backupskip = { "/tmp/*", "/private/tmp/*" }
+opt.splitkeep = "cursor"
+
 -- undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
