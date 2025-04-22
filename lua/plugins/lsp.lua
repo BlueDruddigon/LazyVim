@@ -65,7 +65,7 @@ return {
           "stylua", -- lua
           "shfmt", -- shellscript
           "yapf", -- python
-          "isort", -- python
+          -- "isort", -- python
           "prettierd", -- js, ts, jsx, tsx
           "beautysh", -- shellscript
           "clang-format", -- c, cpp, c#, etc.
