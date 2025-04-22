@@ -24,6 +24,35 @@ return {
     end,
   },
 
+  -- editable formatters
+  {
+    "stevearc/conform.nvim",
+    dependencies = { "mason.nvim" },
+    opts = function(_, opts)
+      opts.formatters = vim.tbl_deep_extend("force", opts.formatters or {}, {
+        ruff_organize_imports = {
+          args = {
+            "check",
+            "--fix",
+            "--force-exclude",
+            "--select=I",
+            "--exit-zero",
+            "--no-cache",
+            "--stdin-filename",
+            "$FILENAME",
+            "-",
+          },
+          condition = function(_)
+            return vim.fn.executable("ruff")
+          end,
+        },
+      })
+      opts.formatters_by_ft = vim.tbl_deep_extend("force", opts.formatters_by_ft or {}, {
+        python = { "ruff_organize_imports", "ruff_format", "yapf" },
+      })
+    end,
+  },
+
   -- environment switcher
   {
     "AckslD/swenv.nvim",
