@@ -14,7 +14,7 @@ return {
     opts = function()
       local select = require("CopilotChat.select")
       return {
-        model = "claude-3.7-sonnet-thought",
+        model = "claude-sonnet-4",
         window = {
           layout = "float",
           relative = "editor",
