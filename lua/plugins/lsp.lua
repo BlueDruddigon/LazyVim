@@ -39,9 +39,10 @@ return {
 
   -- cmdline tools and lsp servers
   {
-    "williamboman/mason.nvim",
-    opts = function()
-      return {
+    "mason-org/mason.nvim",
+    dependencies = {},
+    opts = function(_, opts)
+      return vim.tbl_deep_extend("force", opts, {
         ui = { border = "rounded" },
         ensure_installed = {
           -- LSP servers
@@ -74,7 +75,7 @@ return {
           -- debuggers
           "debugpy", -- python
         },
-      }
+      })
     end,
   },
 
